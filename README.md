@@ -141,6 +141,9 @@ java -jar selenium-server-standalone.jar -role hub
 Перед запуском, убедитесь, что находитесь в директории с файлом 
 `sselenium-server-standalone.jar.`
 
+![image](https://github.com/albnsp/selenium-java-test/assets/144931244/9539ea82-883e-41e5-af99-2fce44c9e7a3)
+
+
 В консоли у вас должна появится информация об 
 успешном старте hub-a. `11:54:52.596 INFO - Nodes should register to http://192.168.99.1:4444/grid/register/11:54:52.596 INFO - Selenium Grid hub is up and running`
 

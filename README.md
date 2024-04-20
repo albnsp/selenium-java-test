@@ -96,6 +96,15 @@ java -jar selenium-server-standalone.jar -role hub
 
 ![image](https://github.com/albnsp/selenium-java-test/assets/144931244/9539ea82-883e-41e5-af99-2fce44c9e7a3)
 
+`Selenium Server` поддерживает одновременно два набора команд - для новой версии `(WebDriver)` и для старой версии `(Selenium RC)`.
+Для запуска теста на удаленной машине нужно запустить на ней сервер, который будет принимать по сети команды, запускать браузер и выполнять их. Предполагается, что Java на машине уже установлена. Запуск сервера выполняется следующей командой, набранной в командной строке (вызов командной строки windows ocyществляется набором команды ст в поиске): 
+```
+Java — jar selenium-server-standalone-****.jar
+```
+ где * — версия сервера.
+
+![image](https://github.com/albnsp/selenium-java-test/assets/144931244/2a6c3f80-b4b5-46f1-b8cf-7db54a8d22fe)
+
 В консоли у вас должна появится информация об 
 успешном старте hub-a. 
 ```11:54:52.596 INFO - Nodes should register to
@@ -111,21 +120,55 @@ http://192.168.99.1:4444/grid/register/
 http://localhost:4444/grid/
 ```
 
-
-
-
-
-
-zzzzzzzzzzzzzzzzzzzzz
-
-`Selenium Server` поддерживает одновременно два набора команд - для новой версии `(WebDriver)` и для старой версии `(Selenium RC)`.
-Для запуска теста на удаленной машине нужно запустить на ней сервер, который будет принимать по сети команды, запускать браузер и выполнять их. Предполагается, что Java на машине уже установлена. Запуск сервера выполняется следующей командой, набранной в командной строке (вызов командной строки windows ocyществляется набором команды ст в поиске): 
+# Подключение Selenium к проекту IntelliJ
+Перейдите по ссылке
 ```
-Java — jar selenium-server-standalone-****.jar
+https://www.selenium.dev/downloads/
 ```
- где * — версия сервера.
+Найдите среди доступных языков и нажмите на `JavaDownload`
 
-![image](https://github.com/albnsp/selenium-java-test/assets/144931244/2a6c3f80-b4b5-46f1-b8cf-7db54a8d22fe)
+Распакуйте файл . Содержание будет примерно таким: `archive`
+
+Откройте свой проект и нажмите `Select`, затем нажмите на плюс справа и выберите `IntelliJFile → Project StructureModules1`. `JARs or directories…`
+
+Перейдите в папку, куда вы только что распаковали архив и выберите все файлы из корня и из подпапки.`jarlibs`
+
+ Нажмите `OK`
+
+
+
+
+
+# Драйвер браузера Connect
+Независимо от того, в чем вы пишете, операция подключения примерно одинакова. `programming `language` `code` `browser driver`
+
+Чтобы убедиться в успешном подключении, вставьте следующий код и скомпилируйте его.
+```
+Selenium package org.test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriverDemo1 {
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe"); //setting the path for chrome driver
+
+        WebDriver driver = new ChromeDriver(); //creating object for chrome driver
+
+        driver.get("https://www.selenium.dev/selenium/web/web-form.html"); //opens the browser and navigates to the URL
+        
+
+    }
+}
+
+```
+Если вы не хотите или не можете редактировать переменную, попробуйте прописать путь к драйверу - вставьте перед строкой PATHWebDriver driver = ...
+
+driver.get("https://www.selenium.dev/selenium/web/web-form.html"); //opens the browser and navigates to the URL
+
+
+bbbbbbbbbbb
 
 
 

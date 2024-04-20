@@ -161,8 +161,8 @@ public class WebDriverDemo1 {
 }
 
 ```
-Если вы не хотите или не можете редактировать переменную, попробуйте прописать путь к драйверу - вставьте перед строкой PATHWebDriver driver = ...
-
+Если вы не хотите или не можете редактировать переменную, попробуйте прописать путь к драйверу - вставьте перед строкой `PATH` `WebDriver driver` = 
+```
 driver.get("https://www.selenium.dev/selenium/web/web-form.html"); //opens the browser and navigates to the URL
-
+```
 

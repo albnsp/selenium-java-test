@@ -1,51 +1,44 @@
+// меню
 package org.testing;
 
-import org.junit.Test;
-import org.openqa.selenium.Platform;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
-/**
- * Web page testing class.
- * @version 1.0.0
- * @autor albnsp
- */
 public class Test1 {
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver",
+                "C:\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
 
-    /*
-       ______     __
-      / ____/__  / /__  ____  (_)_  ______ ___
-      \__ \/ _ \/ / _ \/ __ \/ / / / / __ `__ \
-    ___/ /  __/ /  __/ / / / / /_/ / / / / / /
-    /____/\___/_/\___/_/ /_/_/\__,_/_/ /_/ /_/
-    ------------------------------------------
+        driver.get("https://cafe-matreshka.ru/");
+        WebElement corzina =
+                driver.findElements(By.xpath("/html/body/div[6]/div/div[2]/div/span[2]")).get(0);
+        corzina.click();
 
-    */
+        WebElement zarkoe =
+                driver.findElements(By.xpath("/html/body/main/div/div[16]/div[4]/div[4]/div/a[1]")).get(0);
+        zarkoe.click();
+        zarkoe.click();
 
-    /**
-     * The method opens the page and checks its title in the browser.
-     * @throws MalformedURLException
-     */
-    @Test
-    public void test1() throws MalformedURLException {
+        driver.get("https://cafe-matreshka.ru/");
 
-        DesiredCapabilities capability = new DesiredCapabilities();
-        capability.setBrowserName("chrome");
-        capability.setPlatform(Platform.WIN10);
-        // Create a new driver instance.
-        WebDriver driver;
-        driver = new RemoteWebDriver(new URL("http://192.168.99.1:4444/wd/hub"), capability);
-        driver.manage().window().maximize();
-        // Opening a page in the browser.
-        driver.get("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
-        // Check the page title.
-        System.out.println("Title of the page is " + driver.getTitle());
-        // After the test you need to close the browser.
-        driver.quit();
+        WebElement  beefStroganoff =
+                driver.findElements(By.xpath("/html/body/main/div/div[16]/div[1]/div[4]/div/a[1]")).get(0);
+        beefStroganoff.click();
 
+        driver.get("https://cafe-matreshka.ru/");
+
+        WebElement  free  =
+                driver.findElements(By.xpath("/html/body/main/div/div[18]/div[1]/div[4]/div/a[1]")).get(0);
+        free.click();
+
+        driver.get("https://cafe-matreshka.ru/cart/");
+
+        WebElement searchField =
+                driver.findElement(By.id("coupon_code"));
+
+        searchField.sendKeys("TOP");
     }
 }

@@ -1,4 +1,3 @@
-// меню
 package org.testing;
 
 import org.openqa.selenium.By;
@@ -6,7 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/**
+ * Web page testing class.
+ * @version 1.0.1
+ * @autor albnsp
+ */
 public class Test1 {
+
+    /**
+     * The method opens the page and adds the assortment to the cart
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver",
                 "C:\\chromedriver\\chromedriver.exe");
